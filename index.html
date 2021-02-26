@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jiaahui-ui</title>
+</head>
+
+<body>
+    <div id="app">{{msg}}
+        <jh-button></jh-button>
+    </div>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                msg: "你好"
+            }
+        })
+    </script>
+</body>
+
+</html>
