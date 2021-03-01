@@ -1,3 +1,3 @@
 Vue.component("jh-button", {
-    template: `<button>hi</button>`
+    template: `<button class="jh-button">hi</button>`
 })
