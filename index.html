@@ -13,6 +13,10 @@
             box-sizing: border-box;
         }
 
+        body {
+            padding: 20px;
+        }
+
         :root {
             --button-height: 32px;
             --font-size: 14px;
@@ -21,6 +25,7 @@
             --color: #333;
             --background-color: #fff;
             --border-color-hover: #999;
+            --border-active-background-color: #eee;
         }
     </style>
     <style>
@@ -32,22 +37,30 @@
             border: 1px solid var(--border-color);
             background: var(--background-color);
         }
+
+        .jh-button:hover {
+            border-color: var(--border-color-hover);
+        }
+
+        .jh-button:active {
+            background-color: var(--border-active-background-color);
+        }
+
+        .jh-button:focus {
+            outline: none;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
         <jh-button></jh-button>
-        {{msg}}
     </div>
     <script src="./node_modules/vue/dist/vue.min.js"></script>
     <script src="./button.js"></script>
     <script>
         new Vue({
             el: "#app",
-            data: {
-                msg: "你好"
-            }
         })
     </script>
 </body>
