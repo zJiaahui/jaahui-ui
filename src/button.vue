@@ -6,7 +6,7 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
 .jh-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -14,17 +14,16 @@ export default {};
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--background-color);
-}
+  &:hover {
+    border-color: var(--border-color-hover);
+  }
 
-.jh-button:hover {
-  border-color: var(--border-color-hover);
-}
+  &:active {
+    background-color: var(--border-active-background-color);
+  }
 
-.jh-button:active {
-  background-color: var(--border-active-background-color);
-}
-
-.jh-button:focus {
-  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 </style>
