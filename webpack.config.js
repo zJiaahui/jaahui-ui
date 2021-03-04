@@ -12,24 +12,37 @@ module.exports = {
         filename: "bundle.js", // string    // 「入口分块(entry chunk)」的文件名模板（出口分块？）
     },
     module: {
-        rules: [{
-            //匹配哪些文件
-            test: /\.css$/,
-            //use数组中loader执行循序为从右到左，从下到上
-            use: [
-                //创建style标签，将js中的样式资源插入，添加到head中生效
-                'vue-style-loader',
-                //将css文件变成commonjs模块加载到js中，里面内容是样式字符串
-                'css-loader']
-        },
-        {
-            test: /\.js$/,
-            loader: 'babel-loader'
-        },
-        {
-            test: /\.vue$/,
-            loader: 'vue-loader'
-        }
+        rules: [
+            {
+                //匹配哪些文件
+                test: /\.css$/,
+                //use数组中loader执行循序为从右到左，从下到上
+                use: [
+                    //创建style标签，将js中的样式资源插入，添加到head中生效
+                    'vue-style-loader',
+                    //将css文件变成commonjs模块加载到js中，里面内容是样式字符串
+                    'css-loader']
+            },
+            {
+                //匹配哪些文件
+                test: /\.scss$/,
+                //use数组中loader执行循序为从右到左，从下到上
+                use: [
+                    //创建style标签，将js中的样式资源插入，添加到head中生效
+                    'vue-style-loader',
+                    //将css文件变成commonjs模块加载到js中，里面内容是样式字符串
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
         ],
     },
     plugins: [
