@@ -18,15 +18,29 @@ module.exports = {
             //use数组中loader执行循序为从右到左，从下到上
             use: [
                 //创建style标签，将js中的样式资源插入，添加到head中生效
-                'style-loader',
+                'vue-style-loader',
                 //将css文件变成commonjs模块加载到js中，里面内容是样式字符串
                 'css-loader']
-        }],
+        },
+        {
+            test: /\.js$/,
+            loader: 'babel-loader'
+        },
+        {
+            test: /\.vue$/,
+            loader: 'vue-loader'
+        }
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
             //复制'./src/index.html'文件，并自动引入打包输出的资源文件（js/css）
             template: './src/index.html',
-        })
-    ]
+        }),
+    ],
+    resolve: {
+        alias: {//设置vue 被导入时候的包的路径
+            "vue$": "vue/dist/vue.js"
+        },
+    },
 }
