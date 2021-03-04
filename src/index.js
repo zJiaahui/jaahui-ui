@@ -6,6 +6,7 @@ Vue.component("jh-icon", JhIcon)
 new Vue({
     el: "#app",
     data: {
-        msg: "你好"
+        msg: "你好",
+        loading: false
     }
 })

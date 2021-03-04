@@ -1,6 +1,11 @@
 <template>
-  <button class="jh-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <jh-icon v-if="icon" :name="icon"></jh-icon>
+  <button
+    class="jh-button"
+    :class="{ [`icon-${iconPosition}`]: true }"
+    @click="$emit('click')"
+  >
+    <jh-icon v-if="icon && !loading" :name="icon"></jh-icon>
+    <jh-icon v-if="loading" class="loading" name="loading"></jh-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -11,6 +16,10 @@
 export default {
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false,
+    },
     iconPosition: {
       type: String,
       default: "left",
@@ -23,6 +32,14 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .jh-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -62,6 +79,9 @@ export default {
       margin-right: 0;
       margin-left: 0.3em;
     }
+  }
+  .loading {
+    animation: spin 1s infinite linear;
   }
 }
 </style>

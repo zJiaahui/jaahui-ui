@@ -33,7 +33,7 @@
 <body>
     <div id="app">
         {{msg}}
-        <jh-button icon="del" icon-position="right">按钮</jh-button>
+        <jh-button icon="del" :loading="loading" icon-position="right" @click="loading=!loading">按钮</jh-button>
         <jh-button icon="set">按钮</jh-button>
         <jh-button>按钮</jh-button>
     </div>
