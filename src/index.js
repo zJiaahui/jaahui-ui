@@ -1,6 +1,10 @@
-// import Vue from 'vue'
-// new Vue({
-//     el: "#app"
-// })
+import Vue from 'vue'
 import css from "./index.css"
-console.log("你好");
+import JHButton from "./button.vue"
+Vue.component("jh-button", JHButton)
+new Vue({
+    el: "#app",
+    data: {
+        msg: "你好"
+    }
+})
