@@ -28,41 +28,13 @@
             --border-active-background-color: #eee;
         }
     </style>
-    <style>
-        .jh-button {
-            font-size: var(--font-size);
-            height: var(--button-height);
-            padding: 0 1em;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--border-color);
-            background: var(--background-color);
-        }
-
-        .jh-button:hover {
-            border-color: var(--border-color-hover);
-        }
-
-        .jh-button:active {
-            background-color: var(--border-active-background-color);
-        }
-
-        .jh-button:focus {
-            outline: none;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- <div id="app">
-        <jh-button></jh-button>
-    </div> -->
-    <!-- <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="./button.js"></script>
-    <script>
-        new Vue({
-            el: "#app",
-        })
-    </script> -->
+    <div id="app">
+        {{msg}}
+        <jh-button>按钮</jh-button>
+    </div>
 </body>
 
 </html>
