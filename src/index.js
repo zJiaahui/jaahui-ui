@@ -73,7 +73,7 @@ const expect = chai.expect
     let svg = button.$el.querySelector("svg")
     let { order } = window.getComputedStyle(svg)
 
-    expect(order).to.eq('2')
+    expect(order).to.eq('1')
     //测试通过才会执行以下代码
     button.$el.remove()
     button.$destroy()
