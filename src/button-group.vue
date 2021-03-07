@@ -7,6 +7,16 @@
 <script>
 export default {
   name: "JHButtonGroup",
+  mounted() {
+    for (let node of this.$el.children) {
+      let name = node.nodeName.toLowerCase();
+      if (name !== "button") {
+        console.warn(
+          `jh-button-group的子元素应该是jh-button，但你写的是${name}`
+        );
+      }
+    }
+  },
 };
 </script>
 
