@@ -6,15 +6,15 @@
     </a>
   </a>
 </p>
-<h1 align="center">jaahu-ui</h1>
+<h1 align="center">jaahui-ui</h1>
 
 <h3 align="center">A Vue.js 2.0 UI Toolkit for Web</h3>
 
 ## 介绍
 
-## 开始使用
+## 安装
 
-## 文档
+## 快速开始
 
 ## 提问
 
