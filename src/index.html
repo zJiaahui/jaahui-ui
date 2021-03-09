@@ -27,20 +27,36 @@
             --border-color-hover: #999;
             --border-active-background-color: #eee;
         }
+
+        .box {
+            margin: 20px;
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
         {{msg}}
-        <jh-button icon="del" :loading="loading" icon-position="right" @click="loading=!loading">按钮</jh-button>
-        <jh-button icon="set">按钮</jh-button>
-        <jh-button>按钮</jh-button>
-        <jh-button-group>
-            <jh-button icon="left-arrow">按钮</jh-button>
-            <jh-button icon="right-arrow" icon-position="right">按钮</jh-button>
-        </jh-button-group>
-        <div id="test"></div>
+        <div class="box">
+            <jh-button icon="del" :loading="loading" icon-position="right" @click="loading=!loading">按钮</jh-button>
+            <jh-button icon="set">按钮</jh-button>
+            <jh-button>按钮</jh-button>
+            <jh-button-group>
+                <jh-button icon="left-arrow">按钮</jh-button>
+                <jh-button icon="right-arrow" icon-position="right">按钮</jh-button>
+            </jh-button-group>
+        </div>
+        <div class="box">
+            <jh-input value="你好"></jh-input>
+            <jh-input value="禁用" disabled></jh-input>
+            <jh-input value="只读" readonly></jh-input>
+        </div>
+        <div class="box">
+            <jh-input value="王" error="名字不能少于两个字"></jh-input>
+        </div>
+
+        <div id="test">
+        </div>
     </div>
 </body>
 

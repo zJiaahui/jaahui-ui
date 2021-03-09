@@ -2,9 +2,11 @@ import Vue from 'vue'
 import JhIcon from "./icon.vue";
 import JHButton from "./button.vue"
 import JHButtonGroup from "./button-group.vue"
+import JHInput from "./input.vue"
 Vue.component("jh-button", JHButton)
 Vue.component("jh-icon", JhIcon)
 Vue.component("jh-button-group", JHButtonGroup)
+Vue.component("jh-input", JHInput)
 new Vue({
     el: "#app",
     data: {
@@ -73,7 +75,7 @@ const expect = chai.expect
     let svg = button.$el.querySelector("svg")
     let { order } = window.getComputedStyle(svg)
 
-    expect(order).to.eq('1')
+    expect(order).to.eq('2')
     //测试通过才会执行以下代码
     button.$el.remove()
     button.$destroy()
