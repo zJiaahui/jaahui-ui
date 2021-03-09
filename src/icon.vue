@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import "./svg.js";
 export default {
   name: "JHIcon",
   props: { name: {} },
