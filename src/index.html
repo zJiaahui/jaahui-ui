@@ -62,6 +62,39 @@
             <jh-input @blur="printValue" value="blur"></jh-input>
             <jh-input v-model="msg"></jh-input>
         </div>
+
+        <jh-layout>
+            <jh-header></jh-header>
+            <jh-content></jh-content>
+            <jh-footer></jh-footer>
+        </jh-layout>
+        <jh-layout>
+            <jh-header></jh-header>
+            <jh-layout>
+                <jh-sider></jh-sider>
+                <jh-content></jh-content>
+            </jh-layout>
+            <jh-footer></jh-footer>
+        </jh-layout>
+        <jh-layout>
+            <jh-header></jh-header>
+            <jh-layout>
+                <jh-content></jh-content>
+                <jh-sider></jh-sider>
+            </jh-layout>
+            <jh-footer></jh-footer>
+        </jh-layout>
+
+        <jh-layout>
+            <jh-header></jh-header>
+            <jh-layout>
+                <jh-header></jh-header>
+                <jh-content></jh-content>
+                <jh-footer></jh-footer>
+            </jh-layout>
+            <jh-footer></jh-footer>
+        </jh-layout>
+
         <div id="test">
         </div>
     </div>
