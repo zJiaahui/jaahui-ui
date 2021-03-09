@@ -14,8 +14,8 @@ new Vue({
         loading: false
     },
     methods: {
-        printValue(event) {
-            console.log(event.target.value);
+        printValue(value) {
+            console.log(value);
         }
     }
 })
