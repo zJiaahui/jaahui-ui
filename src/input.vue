@@ -5,6 +5,10 @@
       :value="value"
       :disabled="disabled"
       :readonly="readonly"
+      @change="$emit('change', $event)"
+      @input="$emit('input', $event)"
+      @focus="$emit('focus', $event)"
+      @blur="$emit('blur', $event)"
     />
     <template v-if="error">
       <jh-icon name="error" class="error-icon"></jh-icon>
@@ -36,6 +40,7 @@ export default {
       type: String,
     },
   },
+  methods: {},
 };
 </script>
 

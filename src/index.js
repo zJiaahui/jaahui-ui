@@ -12,6 +12,11 @@ new Vue({
     data: {
         msg: "你好",
         loading: false
+    },
+    methods: {
+        printValue(event) {
+            console.log(event.target.value);
+        }
     }
 })
 

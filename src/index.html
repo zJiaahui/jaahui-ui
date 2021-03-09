@@ -53,8 +53,14 @@
         </div>
         <div class="box">
             <jh-input value="王" error="名字不能少于两个字"></jh-input>
+            <jh-input value="王" error=""></jh-input>
         </div>
-
+        <div class="box">
+            <jh-input @change="printValue" value="change"></jh-input>
+            <jh-input @input="printValue" value="input"></jh-input>
+            <jh-input @focus="printValue" value="focus"></jh-input>
+            <jh-input @blur="printValue" value="blur"></jh-input>
+        </div>
         <div id="test">
         </div>
     </div>
