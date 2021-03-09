@@ -8,7 +8,7 @@
 </p>
 <h1 align="center">jaahui-ui</h1>
 
-<h3 align="center">A Vue.js 2.0 UI Toolkit for Web</h3>
+<h3 align="center">A Vue.js 2.X UI Toolkit for Web</h3>
 
 ## 介绍
 这是我在学习Vue过程中做的一个UI框架，希望对你有用
