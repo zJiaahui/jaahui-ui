@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="jh-content">
     <slot></slot>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
+.jh-content {
   flex-grow: 1;
 }
 </style>

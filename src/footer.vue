@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="jh-footer">
     <slot></slot>
   </div>
 </template>

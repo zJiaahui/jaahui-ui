@@ -1,5 +1,5 @@
 <template>
-  <div class="layout" :class="layoutClass">
+  <div class="jh-layout" :class="layoutClass">
     <slot></slot>
   </div>
 </template>
@@ -21,11 +21,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.layout {
+.jh-layout {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
- 
+
   &.hasSider {
     flex-direction: row;
   }
