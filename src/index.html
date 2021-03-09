@@ -13,9 +13,9 @@
             box-sizing: border-box;
         }
 
-        body {
+        /* body {
             padding: 20px;
-        }
+        } */
 
         :root {
             --button-height: 32px;
@@ -28,15 +28,41 @@
             --border-active-background-color: #eee;
         }
 
-        .box {
+        /* .box {
             margin: 20px;
+        } */
+
+        .demo {
+            height: 100px;
+            border: 1px solid #000;
+        }
+
+        .sider {
+            background: #1d7373;
+            min-height: 100px;
+        }
+
+        .header {
+            background: #006363;
+            height: 100px;
+        }
+
+        .footer {
+            background: #009999;
+            height: 50px;
+        }
+
+        .content {
+            background: #5ccccc;
         }
     </style>
 </head>
 
 <body>
     <div id="app">
-        {{msg}}
+        <!-- {{msg}}
+        <div id="test">
+        </div>
         <div class="box">
             <jh-button icon="del" :loading="loading" icon-position="right" @click="loading=!loading">按钮</jh-button>
             <jh-button icon="set">按钮</jh-button>
@@ -61,42 +87,40 @@
             <jh-input @focus="printValue" value="focus"></jh-input>
             <jh-input @blur="printValue" value="blur"></jh-input>
             <jh-input v-model="msg"></jh-input>
-        </div>
+        </div> -->
 
-        <jh-layout>
-            <jh-header></jh-header>
-            <jh-content></jh-content>
-            <jh-footer></jh-footer>
+        <jh-layout style="height: 100vh;">
+            <jh-header>header</jh-header>
+            <jh-content>content</jh-content>
+            <jh-footer>footer</jh-footer>
         </jh-layout>
-        <jh-layout>
+        <!-- <jh-layout style="height: 100vh;">
             <jh-header></jh-header>
             <jh-layout>
-                <jh-sider></jh-sider>
-                <jh-content></jh-content>
+                <jh-sider>sider</jh-sider>
+                <jh-content>content</jh-content>
             </jh-layout>
             <jh-footer></jh-footer>
-        </jh-layout>
-        <jh-layout>
+        </jh-layout> -->
+
+        <!-- <jh-layout style="height: 100vh;">
             <jh-header></jh-header>
             <jh-layout>
-                <jh-content></jh-content>
-                <jh-sider></jh-sider>
+                <jh-content>content</jh-content>
+                <jh-sider>sider</jh-sider>
             </jh-layout>
             <jh-footer></jh-footer>
-        </jh-layout>
+        </jh-layout> -->
 
-        <jh-layout>
-            <jh-header></jh-header>
+        <!-- <jh-layout style="height: 100vh;">
+            <jh-sider>sider</jh-sider>
             <jh-layout>
                 <jh-header></jh-header>
-                <jh-content></jh-content>
+                <jh-content>content</jh-content>
                 <jh-footer></jh-footer>
             </jh-layout>
-            <jh-footer></jh-footer>
-        </jh-layout>
+        </jh-layout> -->
 
-        <div id="test">
-        </div>
     </div>
 </body>
 

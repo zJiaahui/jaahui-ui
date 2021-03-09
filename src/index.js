@@ -3,10 +3,22 @@ import JhIcon from "./icon.vue";
 import JHButton from "./button.vue"
 import JHButtonGroup from "./button-group.vue"
 import JHInput from "./input.vue"
+import JHContent from "./content.vue"
+import JHFooter from "./footer.vue"
+import JHHeader from "./header.vue"
+import JHLayout from "./layout.vue"
+import JHSider from "./sider.vue"
 Vue.component("jh-button", JHButton)
 Vue.component("jh-icon", JhIcon)
 Vue.component("jh-button-group", JHButtonGroup)
 Vue.component("jh-input", JHInput)
+
+Vue.component("jh-content", JHContent)
+Vue.component("jh-footer", JHFooter)
+Vue.component("jh-header", JHHeader)
+Vue.component("jh-layout", JHLayout)
+Vue.component("jh-sider", JHSider)
+
 new Vue({
     el: "#app",
     data: {
@@ -34,7 +46,7 @@ const expect = chai.expect
             icon: "set"
         }
     })//创建示例
-    button.$mount("#test")//挂载到#test
+    button.$mount()//不挂载即不在页面显示表示挂载在内存中
 
     let useElement = button.$el.querySelector("use")
 
@@ -53,7 +65,7 @@ const expect = chai.expect
             loading: true
         }
     })//创建示例
-    button.$mount()//不挂载即不在页面显示
+    button.$mount()//不挂载即不在页面显示表示挂载在内存中
 
     let useElement = button.$el.querySelector("use")
 
