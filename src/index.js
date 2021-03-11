@@ -8,6 +8,8 @@ import JHFooter from "./footer.vue"
 import JHHeader from "./header.vue"
 import JHLayout from "./layout.vue"
 import JHSider from "./sider.vue"
+import JHToast from "./components/toast/index.vue"
+import JHToastPlugin from "./components/toast/toast-plugin.js"
 Vue.component("jh-button", JHButton)
 Vue.component("jh-icon", JhIcon)
 Vue.component("jh-button-group", JHButtonGroup)
@@ -19,15 +21,34 @@ Vue.component("jh-header", JHHeader)
 Vue.component("jh-layout", JHLayout)
 Vue.component("jh-sider", JHSider)
 
+Vue.component("jh-toast", JHToast)
+
+Vue.use(JHToastPlugin)
+
 new Vue({
     el: "#app",
     data: {
         msg: "你好",
         loading: false
     },
+    created() {
+
+    },
     methods: {
         printValue(value) {
             console.log(value);
+        },
+        showToast(position) {
+            this.$toast("啥规范化绝对时空观恢复阶段考试高分恢复阶段考试高分捷克大使馆", {
+                closeButton: {
+                    text: "知道了",
+                    callback(toast) {
+                        console.log(toast);
+                        console.log("点击知道了");
+                    }
+                },
+                position: position
+            })
         }
     }
 })
