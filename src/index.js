@@ -47,7 +47,9 @@ new Vue({
                         console.log("点击知道了");
                     }
                 },
-                position: position
+                position: position,
+                autoClose: true,
+                autoCloseDelay: 1,
             })
         }
     }
