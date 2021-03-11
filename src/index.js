@@ -10,6 +10,8 @@ import JHLayout from "./layout.vue"
 import JHSider from "./sider.vue"
 import JHToast from "./components/toast/index.vue"
 import JHToastPlugin from "./components/toast/toast-plugin.js"
+import JHTabs from "./components/tabs/index.vue"
+import JhTabPane from "./components/tabs/pane.vue"
 Vue.component("jh-button", JHButton)
 Vue.component("jh-icon", JhIcon)
 Vue.component("jh-button-group", JHButtonGroup)
@@ -23,13 +25,17 @@ Vue.component("jh-sider", JHSider)
 
 Vue.component("jh-toast", JHToast)
 
+Vue.component("jh-tabs", JHTabs)
+Vue.component("jh-tab-pane", JhTabPane)
+
 Vue.use(JHToastPlugin)
 
 new Vue({
     el: "#app",
     data: {
         msg: "你好",
-        loading: false
+        loading: false,
+        activeName: "tab2"
     },
     created() {
 

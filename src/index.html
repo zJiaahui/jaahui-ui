@@ -130,6 +130,12 @@
             <div @click="showToast('middle')">showToast中</div>
             <div @click="showToast('bottom')">showToast下</div>
         </div>
+        <div class="box">
+            <jh-tabs v-model="activeName">
+                <jh-tab-pane label="用户管理1" name="tab1">内容1</jh-tab-pane>
+                <jh-tab-pane label="用户管理2" name="tab2" active>内容2</jh-tab-pane>
+            </jh-tabs>
+        </div>
 
     </div>
 </body>
