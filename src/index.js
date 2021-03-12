@@ -12,6 +12,9 @@ import JHToast from "./components/toast/index.vue"
 import JHToastPlugin from "./components/toast/toast-plugin.js"
 import JHTabs from "./components/tabs/index.vue"
 import JhTabPane from "./components/tabs/pane.vue"
+
+import JHCollapseItem from "./components/collapse/collapse-item.vue"
+import JHCollapse from "./components/collapse/index.vue"
 Vue.component("jh-button", JHButton)
 Vue.component("jh-icon", JhIcon)
 Vue.component("jh-button-group", JHButtonGroup)
@@ -27,6 +30,9 @@ Vue.component("jh-toast", JHToast)
 
 Vue.component("jh-tabs", JHTabs)
 Vue.component("jh-tab-pane", JhTabPane)
+
+Vue.component("jh-collapse-item", JHCollapseItem)
+Vue.component("jh-collapse", JHCollapse)
 
 Vue.use(JHToastPlugin)
 
