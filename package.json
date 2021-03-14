@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/zJiaahui/jaahui-ui/issues"
   },
-  "homepage": "https://github.com/zJiaahui/jaahui-ui#readme"
+  "homepage": "https://github.com/zJiaahui/jaahui-ui#readme",
+  "devDependencies": {
+    "webpack": "^5.25.0",
+    "webpack-cli": "^4.5.0"
+  }
 }
