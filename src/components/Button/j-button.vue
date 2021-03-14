@@ -7,7 +7,8 @@
       'is-disabled': disabled,
     }"
   >
-    <j-icon v-if="icon" :icon="icon"></j-icon>
+    <j-icon v-if="icon && !loading" :icon="icon"></j-icon>
+    <j-icon class="j-loading" v-else-if="loading" icon="loading"></j-icon>
     <slot></slot>
   </button>
 </template>
@@ -30,6 +31,10 @@ export default {
     icon: {
       type: String,
       default: null,
+    },
+    loading: {
+      type: Boolean,
+      default: false,
     },
   },
 };
@@ -132,6 +137,18 @@ export default {
   }
   &.is-round {
     border-radius: 20px;
+  }
+  & > .j-loading {
+    animation: loading 1s linear infinite;
+  }
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 </style>
