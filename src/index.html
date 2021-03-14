@@ -10,7 +10,26 @@
 
 <body>
     <div id="app">
-        <j-button> {{msg}}</j-button>
+        <div>
+            <j-button> {{msg}}</j-button>
+            <j-button type="primary"> {{msg}}</j-button>
+            <j-button type="success"> {{msg}}</j-button>
+            <j-button type="danger"> {{msg}}</j-button>
+        </div>
+        <br>
+        <div>
+            <j-button round> {{msg}}</j-button>
+            <j-button type="primary" round> {{msg}}</j-button>
+            <j-button type="success" round> {{msg}}</j-button>
+            <j-button type="danger" round> {{msg}}</j-button>
+        </div>
+        <br>
+        <div>
+            <j-button disabled> {{msg}}</j-button>
+            <j-button type="primary" disabled> {{msg}}</j-button>
+            <j-button type="success" disabled> {{msg}}</j-button>
+            <j-button type="danger" disabled> {{msg}}</j-button>
+        </div>
     </div>
 </body>
 
