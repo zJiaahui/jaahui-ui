@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
     entry: {
         app: './src/index.js',
@@ -10,11 +10,20 @@ module.exports = {
             //复制'./src/index.html'文件，并自动引入打包输出的资源文件（js/css）
             template: './src/index.html',
         }),
+        new VueLoaderPlugin()
     ],
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
+        ]
     },
     resolve: {
         alias: {
