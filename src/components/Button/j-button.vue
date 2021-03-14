@@ -7,6 +7,7 @@
       'is-disabled': disabled,
     }"
   >
+    <j-icon v-if="icon" :icon="icon"></j-icon>
     <slot></slot>
   </button>
 </template>
@@ -25,6 +26,10 @@ export default {
     disabled: {
       type: Boolean,
       true: false,
+    },
+    icon: {
+      type: String,
+      default: null,
     },
   },
 };
