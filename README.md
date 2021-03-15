@@ -18,23 +18,6 @@
 npm i --save jiaahui-ui
 ```
 ## 快速开始
-使用框架前请在 css中开启 border-box
-```css
-*,*::before,*::after{box-sizing:border-box}
-```
-再设置默认的颜色等变量
-```css
-:root {
-  --button-height: 32px;
-  --font-size: 14px;
-  --border-radius: 4px;
-  --border-color: #999;
-  --color: #333;
-  --background-color: #fff;
-  --border-color-hover: #999;
-  --border-active-background-color: #eee;
-}
-```
 引入jiaahui-ui
 ```js
 import { Button, ButtonGroup, Icon } from "jiaahui-ui"
