@@ -45,7 +45,18 @@
         <br />
         <div>
             <j-button type="primary" icon="fabulous" loading> {{msg}}</j-button>
-            <j-button type="primary" icon="fabulous" :loading="isLoading" @click="isLoading=!isLoading"> {{msg}}</j-button>
+            <j-button type="primary" icon="fabulous" :loading="isLoading" @click="isLoading=!isLoading"> {{msg}}
+            </j-button>
+        </div>
+
+        <br />
+        <div>
+            <j-button-group>
+                <j-button> 上一页</j-button>
+                <j-button> 更多</j-button>
+                <j-button> 下一页</j-button>
+            </j-button-group>
+
         </div>
     </div>
 </body>
