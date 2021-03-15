@@ -7,6 +7,7 @@
 <script>
 import "../../assets/font/svg.js";
 export default {
+  name: "JIcon",
   props: {
     icon: {
       type: String,

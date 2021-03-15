@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name: "JButton",
   props: {
     type: {
       type: String,

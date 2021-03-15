@@ -1,6 +1,6 @@
 import Vue from "vue"
-import JButton from "./components/Button/j-button.vue"
-import JIcon from "./components/Icon/j-icon.vue"
+import JButton from "./components/Button/JButton.vue"
+import JIcon from "./components/Icon/JIcon.vue"
 import JButtonGroup from "./components/ButtonGroup/JButtonGroup.vue"
 Vue.component("j-button", JButton)
 Vue.component("j-icon", JIcon)
