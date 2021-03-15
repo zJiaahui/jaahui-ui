@@ -6,6 +6,7 @@ Vue.component("j-icon", JIcon)
 new Vue({
     el: "#app",
     data: {
-        msg: "你好"
+        msg: "你好",
+        isLoading: false
     }
 })

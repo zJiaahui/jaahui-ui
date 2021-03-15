@@ -44,9 +44,8 @@
         </div>
         <br />
         <div>
-
             <j-button type="primary" icon="fabulous" loading> {{msg}}</j-button>
-
+            <j-button type="primary" icon="fabulous" :loading="isLoading" @click="isLoading=!isLoading"> {{msg}}</j-button>
         </div>
     </div>
 </body>

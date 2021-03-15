@@ -6,6 +6,7 @@
       'is-round': round,
       'is-disabled': disabled,
     }"
+    @click="$emit('click')"
   >
     <j-icon v-if="icon && !loading" :icon="icon"></j-icon>
     <j-icon class="j-loading" v-else-if="loading" icon="loading"></j-icon>
