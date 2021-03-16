@@ -64,6 +64,20 @@
             <j-switch :value="true"></j-switch>
             <j-switch :value="true" disabled></j-switch>
         </div>
+
+        <br />
+        <div>
+            <j-input placeholder="输入提示"></j-input>
+            <j-input placeholder="输入提示" disabled></j-input>
+            <j-input placeholder="输入提示" colortheme="primary"></j-input>
+            <j-input placeholder="输入提示" colortheme="success"></j-input>
+            <j-input value="默认文本" colortheme="warning"></j-input>
+            <j-input value="小" error="用户名不足两个汉字" colortheme="danger">
+            </j-input>
+            <j-input placeholder="输入提示" colortheme="primary" v-model="msg">
+            </j-input>
+            <p>vlaue:{{msg}}</p>
+        </div>
     </div>
 </body>
 
