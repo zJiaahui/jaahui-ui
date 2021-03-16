@@ -2,7 +2,7 @@
   <div class="wrapper">
     <input
       :class="[
-        's-input',
+        'j-input',
         colortheme,
         { round: round, plain: plain, disabled: disabled },
       ]"
@@ -83,8 +83,9 @@ $danger: #f56c6c;
   // background-color: $danger;
   border-color: $danger;
 }
-.s-input {
+.j-input {
   height: 32px;
+  width: 140px;
   font-size: 14px;
   padding-left: 0.5em;
   outline: none;

@@ -14,5 +14,6 @@ new Vue({
     data: {
         msg: "你好",
         isLoading: false
+        , ischecked: true
     }
 })

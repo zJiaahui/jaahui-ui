@@ -60,9 +60,9 @@
         </div>
         <br />
         <div>
-            <j-switch></j-switch>
-            <j-switch :value="true"></j-switch>
-            <j-switch :value="true" disabled></j-switch>
+            <j-switch name="agree" :ischecked.sync="ischecked"></j-switch>
+            <j-switch name="agree" :ischecked.sync="ischecked" activecolor="#409eff" inactivecolor="#f56c6c">
+            </j-switch>
         </div>
 
         <br />

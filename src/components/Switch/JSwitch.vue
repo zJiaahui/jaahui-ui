@@ -1,100 +1,92 @@
 <template>
-  <label class="j-switch" :class="{ checked: checked }">
-    <span class="j-switch-core" :style="styles"></span>
-    <input
-      type="checkbox"
-      class="v-switch-input"
-      :value="value"
-      :checked="checked"
-      :disabled="disabled"
-      @change="handleChange"
-    />
-  </label>
+  <div @click="handleClick" :class="{ 'is-checked': ischecked }">
+    <span class="s-switch__core" ref="core">
+      <span class="s-switch__button"></span>
+    </span>
+    <input :name="name" type="checkbox" ref="checkbox" />
+  </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return { checked: false };
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.checked = this.value;
-    });
+  name: "SSwitch",
+  props: {
+    ischecked: {
+      type: Boolean,
+      default: false,
+    },
+    activecolor: {
+      type: String,
+    },
+    inactivecolor: {
+      type: String,
+    },
+    name: {
+      type: String,
+    },
   },
   methods: {
-    handleChange(e) {
-      this.$emit("change", e.target.checked);
-      this.checked = e.target.checked;
-      console.log(e.target.checked);
+    handleClick() {
+      this.$emit("update:ischecked", !this.ischecked);
+    },
+    setColor() {
+      if (this.activecolor || this.inactivecolor) {
+        this.$refs.core.style.backgroundColor = this.ischecked
+          ? this.activecolor
+          : this.inactivecolor;
+      }
     },
   },
-  props: {
-    value: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    activeColor: {
-      type: String,
-      default: "#409EFF",
-    },
-    inactiveColor: {
-      type: String,
-      default: "#dcdfe6",
+  watch: {
+    ischecked() {
+      this.setColor();
+      this.$refs.checkbox.checked = this.ischecked;
     },
   },
-  computed: {
-    isChecked() {
-      return this.value === this.checked;
-    },
-    styles() {
-      const color = this.checked ? this.activeColor : this.inactiveColor;
-      return {
-        borderColor: color,
-        backgroundColor: color,
-      };
-    },
+  mounted() {
+    this.setColor();
+    this.$refs.checkbox.checked = this.ischecked;
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.j-switch {
+<style lang="scss" socped>
+$success: #67c23a;
+.s-switch__core {
   position: relative;
   display: inline-block;
-  & > .j-switch-core {
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    line-height: 20px;
-    border-radius: 10px;
-  }
-  & > .j-switch-core:after {
+  width: 40px;
+  height: 20px;
+  outline: none;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: #dcdfe6;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+  vertical-align: middle;
+
+  .s-switch__button {
     position: absolute;
-    display: inline-block;
-    content: "";
-    top: 0;
-    left: 0;
+    left: 2px;
+    top: 2px;
     width: 16px;
     height: 16px;
-    border-radius: 16px;
-    background-color: #fff;
-    margin: 2px 2px;
-  }
-  & .checked > .j-switch-core:after {
-    animation: identifier 0.1s linear 1 forwards;
+    background-color: white;
+    border-radius: 100%;
+    transition: all 0.3s;
   }
 }
-@keyframes identifier {
-  from {
-    transform: translateX(0);
+.is-checked {
+  .s-switch__core {
+    background-color: $success;
   }
-  to {
+  .s-switch__core > .s-switch__button {
+    // background-color: red;
     transform: translateX(20px);
   }
+}
+input {
+  width: 0;
+  height: 0;
 }
 </style>
