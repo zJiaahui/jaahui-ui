@@ -23,7 +23,7 @@
             <j-button type="success" round> {{msg}}</j-button>
             <j-button type="danger" round> {{msg}}</j-button>
         </div>
-        <br>
+        <br />
         <div>
             <j-button disabled> {{msg}}</j-button>
             <j-button type="primary" disabled> {{msg}}</j-button>
@@ -57,6 +57,12 @@
                 <j-button> 下一页</j-button>
             </j-button-group>
 
+        </div>
+        <br />
+        <div>
+            <j-switch></j-switch>
+            <j-switch :value="true"></j-switch>
+            <j-switch :value="true" disabled></j-switch>
         </div>
     </div>
 </body>
