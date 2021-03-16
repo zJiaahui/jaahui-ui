@@ -78,6 +78,24 @@
             </j-input>
             <p>vlaue:{{msg}}</p>
         </div>
+        <br />
+        <div>
+            <j-button round type="primary" @click="visible=true">点我显示对话框</j-button>
+            <j-dialog :visible.sync="visible">
+                <template slot="footer">
+                    <j-button @click="visible=false">取消</j-button>
+                    <j-button type="primary" @click="visible=false">确定</j-button>
+                </template>
+            </j-dialog>
+            <j-button round type="primary" @click="visible2=true">点我显示对话框</j-button>
+            <j-dialog :visible.sync="visible2" title="提示信息">
+                <span>自定义显示内容</span>
+                <template slot="footer">
+                    <j-button @click="visible2=false">取消</j-button>
+                    <j-button type="primary" @click="visible2=false">确定</j-button>
+                </template>
+            </j-dialog>
+        </div>
     </div>
 </body>
 
