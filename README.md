@@ -6,10 +6,16 @@
     </a>
   </a>
 </p>
-<h1 align="center">jaahui-ui</h1>
+<h1 align="center">jiaahui-ui</h1>
 
 <h3 align="center">A Vue.js 2.X UI Toolkit for Web</h3>
+<div align="center">
 
+![npm](https://img.shields.io/npm/v/jiaahui-ui?style=flat-square)
+![npm](https://img.shields.io/npm/dt/jiaahui-ui?style=flat-square)
+![NPM](https://img.shields.io/npm/l/jiaahui-ui?style=flat-square)
+
+</div>
 ## 介绍
 这是我在学习Vue过程中做的一个UI框架，希望对你有用
 
