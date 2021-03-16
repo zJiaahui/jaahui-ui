@@ -24,11 +24,11 @@ export default {
     },
     round: {
       type: Boolean,
-      true: false,
+      default: false,
     },
     disabled: {
       type: Boolean,
-      true: false,
+      default: false,
     },
     icon: {
       type: String,
