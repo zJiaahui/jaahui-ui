@@ -30,10 +30,23 @@ npm i --save jiaahui-ui
 ```js
 import { Button, ButtonGroup, Icon } from "jiaahui-ui"
 ```
-## 提问
+## 项目代办
 
-## 变更记录
+- [x] Button
+- [x] Input
+- [x] Switch
+- [x] Icon
+- [x] Pager
+- [x] Dialog
+- [x] Toast
+- [ ] Carousel
+- [ ] Preview demo and docs online
+- [ ] Component unit testing
+...
+## 参考
+本项目参考了其他一些 UI 库，包括设计和代码。感谢这些开源社区贡献者。
+- [Element](https://element.eleme.cn/#/zh-CN)
+- [Ant Design](https://ant.design/)
+- [iView](https://www.iviewui.com/)
+- [wheels](https://github.com/FrankFang/wheels)
 
-## 联系方式
-
-## 贡献代码
