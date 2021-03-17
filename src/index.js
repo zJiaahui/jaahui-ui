@@ -6,12 +6,14 @@ import JSwitch from "./components/Switch/JSwitch.vue"
 import JInput from "./components/Input/JInput.vue"
 import JDialog from "./components/Dialog/JDialog.vue"
 import JToast from "./components/Toast/Toast.js"
+import JPager from "./components/Pager/JPager.vue"
 Vue.component("j-button", JButton)
 Vue.component("j-icon", JIcon)
 Vue.component("j-button-group", JButtonGroup)
 Vue.component("j-switch", JSwitch)
 Vue.component("j-input", JInput)
 Vue.component("j-dialog", JDialog)
+Vue.component("j-pager", JPager)
 Vue.use(JToast)
 new Vue({
     el: "#app",
@@ -21,6 +23,7 @@ new Vue({
         , ischecked: true
         , visible: false
         , visible2: false
+        , current: 5
     }
     , methods: {
         infoToast() {
@@ -31,6 +34,9 @@ new Vue({
         }
         , successToast() {
             this.$Toast({ type: "success", delay: 5, msg: "成功" })
+        },
+        pangechange(value) {
+            console.log(value);
         }
     }
 })

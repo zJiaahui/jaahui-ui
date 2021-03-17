@@ -102,6 +102,12 @@
             <j-button @click="successToast">点我显示成功Toast</j-button>
             <j-button @click="errorToast">点我显示失败Toast</j-button>
         </div>
+        <br />
+        <div>
+            <j-pager :total="100" :page-size="10" :current-page.sync="current" @currentchange="pangechange"></j-pager>
+
+        </div>
+        <br />
     </div>
 </body>
 
