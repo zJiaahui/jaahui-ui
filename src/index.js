@@ -7,6 +7,8 @@ import JInput from "./components/Input/JInput.vue"
 import JDialog from "./components/Dialog/JDialog.vue"
 import JToast from "./components/Toast/Toast.js"
 import JPager from "./components/Pager/JPager.vue"
+import JCarousel from "./components/Carousel/JCarousel.vue"
+import JCarouselItem from "./components/Carousel/JCarouselItem.vue"
 Vue.component("j-button", JButton)
 Vue.component("j-icon", JIcon)
 Vue.component("j-button-group", JButtonGroup)
@@ -14,6 +16,8 @@ Vue.component("j-switch", JSwitch)
 Vue.component("j-input", JInput)
 Vue.component("j-dialog", JDialog)
 Vue.component("j-pager", JPager)
+Vue.component("j-carousel", JCarousel)
+Vue.component("j-carousel-item", JCarouselItem)
 Vue.use(JToast)
 new Vue({
     el: "#app",
@@ -24,6 +28,12 @@ new Vue({
         , visible: false
         , visible2: false
         , current: 5
+        , show: true
+    },
+    mounted() {
+        setInterval(() => {
+
+        }, 3000);
     }
     , methods: {
         infoToast() {
