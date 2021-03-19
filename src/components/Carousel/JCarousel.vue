@@ -1,18 +1,18 @@
 <template>
   <div
     class="j-carousel"
-    @mouseover="handelMouseover"
-    @mouseleave="handeMouseleave"
+    @mouseleave="handelMouseleave"
+    @mouseenter="handelMouseenter"
   >
     <div class="j-carousel-list" :style="{ height: `${height}px` }">
       <slot></slot>
     </div>
-    <ul class="v-carousel-lines">
+    <ul class="j-line-list">
       <li
         v-for="(item, index) in carouselList"
         :key="index"
-        class="line"
-        :class="{ 'line-active': index === currentIndex }"
+        :class="{ 'line-acitve': index == currentIndex }"
+        @click="clickLinechangCarousel(index)"
       ></li>
     </ul>
     <button class="j-carousel-arrow arrow-prev" @click="handleArrowPrev">
@@ -24,79 +24,99 @@
   </div>
 </template>
 <script>
+const reflow = (element) => element.offsetHeight;
 export default {
   name: "JCarousel",
   data() {
     return {
-      currentIndex: 1,
       carouselList: [],
-      automaticPlayId: null,
-      inItem: null,
+      currentIndex: 0,
       outItem: null,
+      inItem: null,
+      intervalID: null,
     };
   },
   props: {
     height: {
       type: Number,
-      default: 200,
+      default: 300,
     },
-    interval: {
+    time: {
       type: Number,
-      default: 3,
+      default: 300,
     },
   },
   methods: {
-    handeMouseleave() {
-      this.playCarousel();
-    },
-    handelMouseover() {
-      if (this.automaticPlayId) {
-        clearInterval(this.automaticPlayId);
-        this.automaticPlayId = null;
-      }
+    handleArrowNext() {
+      this.moveCarousel("left", this.getNextIndex());
     },
     handleArrowPrev() {
-      this.moveCarousel("right", this.getPrevIndex);
+      this.moveCarousel("right", this.getPrevIndex());
     },
-    handleArrowNext() {
-      this.moveCarousel("left", this.getInItemIndex);
+    clickLinechangCarousel(index) {
+      if (index < this.currentIndex) {
+        this.moveCarousel("left", index);
+      } else {
+        this.moveCarousel("right", index);
+      }
+    },
+    handelMouseenter() {
+      if (this.intervalID) {
+        clearInterval(this.intervalID);
+        this.intervalID = null;
+      }
+    },
+    handelMouseleave() {
+      this.playCarousel();
     },
     getPrevIndex() {
-      this.currentIndex > 0
-        ? --this.currentIndex
-        : (this.currentIndex = this.carouselList.length - 1);
-      return this.currentIndex;
+      if (this.currentIndex > 0) {
+        return this.currentIndex - 1;
+      } else {
+        return this.carouselList.length - 1;
+      }
     },
-    getInItemIndex() {
-      this.currentIndex < this.carouselList.length - 1
-        ? ++this.currentIndex
-        : (this.currentIndex = 0);
-      return this.currentIndex;
+    getNextIndex() {
+      if (this.currentIndex < this.carouselList.length - 1) {
+        return this.currentIndex + 1;
+      } else {
+        return 0;
+      }
     },
     restCarousel() {
-      this.outItem.addEventListener("transitionend", () => {
-        this.outItem.setAttribute("class", "j-carousel-item");
-        this.inItem.setAttribute("class", "j-carousel-item active");
-      });
+      this.outItem.addEventListener(
+        "transitionend",
+        () => {
+          this.outItem.setAttribute("class", `j-carousel-item `);
+          this.inItem.setAttribute("class", `j-carousel-item active`);
+        },
+        false
+      );
     },
-    moveCarousel(direction, nextIndex) {
+    moveCarousel(direction, index) {
+      const type = direction == "left" ? "in" : "out";
       this.outItem = this.carouselList[this.currentIndex].$el;
-      this.inItem = this.carouselList[nextIndex()].$el;
+      this.inItem = this.carouselList[index].$el;
+      this.currentIndex = index;
+      this.inItem.setAttribute("class", `j-carousel-item ${type}`);
+      reflow(this.inItem);
       this.outItem.setAttribute("class", `j-carousel-item active ${direction}`);
-      this.inItem.setAttribute("class", `j-carousel-item in`);
+      this.inItem.setAttribute("class", `j-carousel-item ${type} ${direction}`);
       this.restCarousel();
     },
     playCarousel() {
-      this.automaticPlayId = setInterval(() => {
-        this.moveCarousel("left", this.getInItemIndex);
-      }, this.interval * 1000);
+      this.intervalID = setInterval(() => {
+        this.moveCarousel("left", this.getNextIndex());
+      }, this.time * 1000);
     },
     initCarousel() {
       this.carouselList = this.$children.filter((item) => {
-        return item.$options.name === "JCarouselItem";
+        return item.$options.name == "JCarouselItem";
       });
       this.carouselList.forEach((item, index) => {
-        index === this.currentIndex ? item.$el.classList.add("active") : "";
+        if (index === this.currentIndex) {
+          item.$el.classList.add("active");
+        }
       });
     },
   },
@@ -111,72 +131,67 @@ export default {
 <style lang="scss" scoped>
 .j-carousel {
   width: 100%;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   & .j-carousel-item:nth-child(odd) {
     background-color: #d3dce6;
+    text-align: center;
   }
   & .j-carousel-item:nth-child(even) {
     background-color: #99a9bf;
-  }
-  &-list {
-    position: relative;
-  }
-  & > .v-carousel-lines {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    bottom: 4px;
-    padding: 0;
-    margin: 0;
-    display: block;
-
-    list-style-type: none;
     text-align: center;
-    & > .line {
+  }
+  & .j-line-list {
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    & > li {
       display: inline-block;
+      height: 2px;
       width: 30px;
-      background: #000;
-      height: 4px;
-      margin-right: 10px;
-    }
-    & > .line-active {
-      background: #fff;
+      background-color: #cad2de;
+      cursor: pointer;
+      margin: 0 4px;
+      &.line-acitve {
+        background-color: #fff;
+      }
     }
   }
-  &:hover > .j-carousel-arrow {
-    background-color: rgba(31, 45, 61, 0.23);
-    display: block;
-    transition: all 0.4s;
+  &:hover .j-carousel-arrow {
+    opacity: 1;
+
+    transition: all 0.3s;
     &.arrow-prev {
-      opacity: 1;
       transform: translateX(10px) translateY(-50%);
     }
     &.arrow-next {
-      opacity: 1;
       transform: translateX(-10px) translateY(-50%);
     }
   }
   & > .j-carousel-arrow {
-    position: absolute;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
     width: 36px;
     height: 36px;
+    position: absolute;
+    top: 50%;
     border-radius: 50%;
+    transform: translateY(-50%);
     border: none;
+    background-color: rgba(31, 45, 61, 0.11);
     color: #fff;
-    outline: none;
-    transition: all 0.4s;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgba(31, 45, 61, 0.55);
+    }
     &.arrow-prev {
       left: 0;
-      top: 50%;
-      opacity: 0;
-      transform: translateX(-10px) translateY(-50%);
     }
     &.arrow-next {
       right: 0;
-      top: 50%;
-      opacity: 0;
-      transform: translateX(10px) translateY(-50%);
     }
   }
 }

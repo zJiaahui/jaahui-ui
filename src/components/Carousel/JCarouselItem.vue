@@ -12,28 +12,30 @@ export default {
 
 <style lang="scss" scoped>
 .j-carousel-item {
-  display: none;
   position: absolute;
-  text-align: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+  display: none;
   transition: all 0.4s;
-
   &.active,
-  &.in {
+  &.in,
+  &.out {
     display: block;
   }
-  &.active.left {
+  &.left,
+  &.out {
     transform: translateX(-100%);
   }
-  &.active.right {
+  &.right,
+  &.in {
     transform: translateX(100%);
   }
-  //   &.in {
-  //     transform: translateX(0);
-  //   }
+
+  &.in.left,
+  &.out.right {
+    transform: translateX(0);
+  }
 }
 </style>
