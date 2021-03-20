@@ -6,4 +6,6 @@ import Input from "./src/components/Input/JInput.vue"
 import Dialog from "./src/components/Dialog/JDialog.vue"
 import Toast from "./src/components/Toast/Toast.js"
 import Pager from "./src/components/Pager/JPager.vue"
-export { Button, ButtonGroup, Icon, Switch, Input, Dialog, Toast, Pager }
+import Carousel from "./src/components/Carousel/JCarousel.vue"
+import CarouselItem from "./src/components/Carousel/JCarouselItem.vue"
+export { Button, ButtonGroup, Icon, Switch, Input, Dialog, Toast, Pager, Carousel, CarouselItem }
