@@ -46,7 +46,7 @@ new Vue({
             this.$Toast({ type: "success", delay: 5, msg: "成功" })
         },
         pangechange(value) {
-            console.log(value);
+            // console.log(value);
         }
     }
 })

@@ -175,41 +175,5 @@ export default {
     border-color: #409eff;
   }
 }
-// .j-pager {
-//   & > ul {
-//
-//     display: flex;
-//     & .disabled {
-//       color: #ddd;
-//       cursor: not-allowed;
-//       &:hover {
-//         color: #ddd;
-//         border: 1px solid #ddd;
-//       }
-//     }
-//     & li {
-//       display: inline-block;
-//       width: 32px;
-//       min-width: 32px;
-//       height: 32px;
-//       line-height: 32px;
-//       text-align: center;
-//       border: 1px solid #ddd;
-//       border-radius: 4px;
-//       font-size: 14px;
-//       margin: 0 4px;
-//       color: #666;
-//       user-select: none;
-//       cursor: pointer;
-//       &:hover {
-//         color: #409eff;
-//         border-color: #409eff;
-//       }
-//     }
-//     & .acitve {
-//       color: #409eff;
-//       border-color: #409eff;
-//     }
-//   }
-// }
+
 </style>
