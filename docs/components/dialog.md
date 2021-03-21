@@ -2,11 +2,11 @@
 
 ## 自定义对话框
 
-预览
+- 预览
 
 <dialog-demo></dialog-demo>
 
-代码
+- 示例代码
 
 ```html
 <j-button type="primary" @click="visible = true">点我显示对话框</j-button>

@@ -3,7 +3,9 @@
 
 - 预览
 
+<ClientOnly>
 <carousel-demo></carousel-demo>
+</ClientOnly>
 
 - 示例代码
 

@@ -2,11 +2,11 @@
 
 ## 主题输入框
 
-预览
+- 预览
 
 <input-demo></input-demo>
 
-示例代码
+- 示例代码
 
 ```html
 <s-input placeholder="输入提示"></s-input>
@@ -19,11 +19,11 @@
 
 ## 支持 v-model
 
-预览
+- 预览
 
 <input-demo1></input-demo1>
 
-示例代码
+- 示例代码
 
 ```html
 <s-input placeholder="输入提示" colortheme="primary" v-model="msg"></s-input>

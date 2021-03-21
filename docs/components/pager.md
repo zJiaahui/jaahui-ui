@@ -1,10 +1,12 @@
 # Pager分页器
 ## 基本用法
-预览
+- 预览
 
+<ClientOnly>
 <pager-demo></pager-demo>
+</ClientOnly>
 
-示例代码
+- 示例代码
 
 ```html
 <template>
