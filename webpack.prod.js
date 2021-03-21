@@ -9,6 +9,6 @@ module.exports = merge(common, {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'lib'),
-        clean: true,
+       // clean: true,
     },
 });
