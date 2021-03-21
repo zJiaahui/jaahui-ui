@@ -22,8 +22,13 @@
 </template>
 
 <script>
+import JIcon from "../icon/JIcon.vue";
+
 export default {
   name: "JDialog",
+  components: {
+    JIcon,
+  },
   props: {
     visible: {
       type: Boolean,

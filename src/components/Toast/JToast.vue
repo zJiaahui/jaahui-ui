@@ -6,8 +6,13 @@
 </template>
 
 <script>
+import JIcon from "../icon/JIcon.vue";
+
 export default {
   name: "JToast",
+  components: {
+    JIcon,
+  },
   mounted() {
     setTimeout(() => {
       this.close();
@@ -70,6 +75,7 @@ export default {
   font-size: 14px;
   padding: 0 0.5em;
   border-radius: 4px;
+  z-index: 1000;
   &.j-toast-success {
     color: rgb(53, 204, 15);
     background-color: #f0f9eb;

@@ -22,7 +22,11 @@
   </div>
 </template>
 <script>
+import JIcon from "../icon/JIcon.vue";
 export default {
+  components: {
+    JIcon,
+  },
   name: "JInput",
   props: {
     placeholder: {
@@ -239,7 +243,7 @@ $danger: #f56c6c;
 }
 
 /*  DISABLE BUTTON*/
-.s-input.disabled {
+.j-input.disabled {
   &,
   &:focus,
   &:hover {
@@ -251,15 +255,6 @@ $danger: #f56c6c;
   }
 }
 
-// .wrapper input:hover {
-//   border-color: #666;
-// }
-// .wrapper input:active {
-//   background-color: #eee;
-// }
-// .wrapper input:focus {
-//   box-shadow: 0 1px 3px inset;
-// }
 .error {
   fill: red;
   color: red;

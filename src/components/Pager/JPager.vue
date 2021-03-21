@@ -28,8 +28,12 @@
 </template>
 
 <script>
+import JIcon from "../icon/JIcon.vue";
 export default {
   name: "JPager",
+  components: {
+    JIcon,
+  },
   data() {
     return { pagerCount: 9, pagerList: [] };
   },
@@ -175,5 +179,4 @@ export default {
     border-color: #409eff;
   }
 }
-
 </style>

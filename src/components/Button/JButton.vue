@@ -15,7 +15,11 @@
 </template>
 
 <script>
+import JIcon from "../icon/JIcon.vue";
 export default {
+  components: {
+    JIcon,
+  },
   name: "JButton",
   props: {
     type: {

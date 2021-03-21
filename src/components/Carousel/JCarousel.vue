@@ -24,9 +24,13 @@
   </div>
 </template>
 <script>
+import JIcon from "../icon/JIcon.vue";
 const reflow = (element) => element.offsetHeight;
 export default {
   name: "JCarousel",
+  components:{
+    JIcon
+  },
   data() {
     return {
       carouselList: [],
