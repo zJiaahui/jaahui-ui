@@ -6,13 +6,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = merge(common, {
     mode: 'production',
     entry: {
-        app: './index.js',
+        main: './index.js',
     },
     plugins: [
         new CleanWebpackPlugin(),
     ],
     output: {
-        filename: '[name].bundle.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'lib'),
         // clean: true,
     },
