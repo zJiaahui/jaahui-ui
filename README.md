@@ -22,13 +22,25 @@
 这是我在学习 Vue 的过程中尝试写的一个简单 UI 框架，可能有人觉得我是在重复的造轮子，但我想这种方式可以用来提高自己，同时也希望对你有所帮助
 
 ## 安装
-```bash
-npm i --save jiaahui-ui
+```sh
+npm i jiaahui-ui
 ```
 ## 快速开始
-引入jiaahui-ui
+### 引入 jiaahui-ui 
+
+需要注意的是，样式文件需要单独引入。
+
 ```js
-import { Button, ButtonGroup, Icon } from "jiaahui-ui"
+import Vue from "vue";
+
+import { Button } from "jiaahui-ui";
+import "jiaahui-ui/lib/style/index.css";
+
+Vue.component("j-button", Button)
+
+new Vue({
+  el: "#app",
+});
 ```
 ## 项目代办
 
