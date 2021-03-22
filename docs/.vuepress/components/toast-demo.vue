@@ -1,8 +1,8 @@
 <template>
   <div class="box">
     <j-button @click="infoToast">点我显示Toast</j-button>
-    <j-button @click="successToast">点我显示成功Toast</j-button>
-    <j-button @click="errorToast">点我显示失败Toast</j-button>
+    <j-button @click="successToast">显示成功Toast</j-button>
+    <j-button @click="errorToast">显示失败Toast</j-button>
   </div>
 </template>
 

@@ -71,7 +71,10 @@
 - 示例代码
 
 ```html
-
+<j-button icon="fabulous" loading>loading</j-button>
+<j-button icon="del" :loading="isLoading" @click="isLoading = !isLoading">
+点击
+</j-button>
 ```
 ## 按钮组
 

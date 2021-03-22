@@ -29,5 +29,6 @@ export default {
   border-radius: 4px;
   box-shadow: 0 0 4px 0 rgb(0 0 0 / 30%);
   padding: 20px;
+  overflow: auto;
 }
 </style>
