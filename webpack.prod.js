@@ -6,7 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = merge(common, {
     mode: 'production',
     entry: {
-        main: './index.js',
+        index: './index.js',
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -14,6 +14,16 @@ module.exports = merge(common, {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'lib'),
-        // clean: true,
+        library: 'jiaahui-ui',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
+    // externals: {
+    //     vue: {
+    //         root: 'Vue',
+    //         commonjs: 'vue',
+    //         commonjs2: 'vue',
+    //         amd: 'vue'
+    //     }
+    // },
 });
